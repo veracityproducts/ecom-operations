@@ -241,6 +241,36 @@ class ShippingRate(BaseModel):
         return self.cost / self.estimated_days
 
 
+class ShippingLabel(BaseModel):
+    """Shipping label information model."""
+    model_config = ConfigDict(str_strip_whitespace=True)
+    
+    tracking_number: str = Field(..., min_length=1, max_length=100)
+    carrier: str = Field(..., min_length=1, max_length=50)
+    service_level: str = Field(..., min_length=1, max_length=50)
+    label_url: str = Field(..., min_length=1)
+    rate_amount: float = Field(..., ge=0)
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    
+    # Optional fields
+    label_id: Optional[str] = None
+    label_format: str = Field(default="PDF")
+    label_size: str = Field(default="4x6")
+
+
+class PackingSlip(BaseModel):
+    """Packing slip information model."""
+    model_config = ConfigDict(str_strip_whitespace=True)
+    
+    url: str = Field(..., min_length=1)
+    expires_at: datetime
+    format: str = Field(default="PDF")
+    
+    # Optional fields
+    slip_id: Optional[str] = None
+    pages: int = Field(default=1, ge=1)
+
+
 class Fulfillment(BaseModel):
     """Fulfillment tracking model."""
     model_config = ConfigDict(

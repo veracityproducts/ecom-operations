@@ -55,6 +55,13 @@ class ShippingCarrierSettings(BaseSettings):
     """Shipping carrier API configuration."""
     model_config = SettingsConfigDict(env_prefix="SHIPPING_")
     
+    # Shippo Configuration (Primary platform)
+    shippo_api_token: str = Field(description="Shippo API token")
+    shippo_test_api_token: Optional[str] = Field(default=None, description="Shippo test API token")
+    shippo_base_url: str = Field(default="https://api.goshippo.com", description="Shippo API base URL")
+    shippo_rate_limit_tier: str = Field(default="standard", description="Shippo rate limit tier")
+    shippo_preferred_carrier: Optional[str] = Field(default="usps", description="Preferred carrier for rate selection")
+    
     # USPS Configuration
     usps_api_key: Optional[str] = Field(default=None, description="USPS API key")
     usps_username: Optional[str] = Field(default=None, description="USPS username")
@@ -75,6 +82,14 @@ class ShippingCarrierSettings(BaseSettings):
     # General settings
     default_package_type: str = Field(default="BOX", description="Default package type")
     max_weight_oz: int = Field(default=1600, description="Maximum package weight in ounces")
+    
+    @property
+    def shippo_token(self) -> str:
+        """Get appropriate Shippo token based on environment."""
+        if hasattr(self, '_parent_settings') and hasattr(self._parent_settings, 'environment'):
+            if self._parent_settings.environment == "production":
+                return self.shippo_api_token
+        return self.shippo_test_api_token or self.shippo_api_token
 
 
 class ShopifySettings(BaseSettings):

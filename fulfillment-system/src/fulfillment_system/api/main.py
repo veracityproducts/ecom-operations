@@ -30,6 +30,7 @@ from ..utils.exceptions import (
     ProcessingError, InsufficientInventoryError, 
     DocumentGenerationError, ShippingError
 )
+from .webhooks import router as webhook_router
 
 # Configure logging
 logging.basicConfig(
@@ -103,6 +104,9 @@ def create_app(settings: Settings) -> FastAPI:
         app.state.document_service,
         app.state.metrics_collector
     )
+    
+    # Include webhook router
+    app.include_router(webhook_router)
     
     return app
 
