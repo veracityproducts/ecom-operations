@@ -1,0 +1,64 @@
+# Environment variables
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv
+venv/
+ENV/
+env/
+
+# UV
+.venv/
+
+# Claude Code - contains session data and potential secrets
+.claude/
+
+# OS files
+.DS_Store
+**/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+htmlcov/
+.coverage
+.coverage.*
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Deployment artifacts
+fulfillment-deploy.tar.gz
+*.tar.gz
+
+# Data files with order information
+data/orders/*.json
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

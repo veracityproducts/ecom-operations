@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: grooved-fulfillment
+    runtime: python
+    buildCommand: "pip install uv && uv sync"
+    startCommand: "uv run fulfillment/main.py"
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: SHOPIFY_SHOP_DOMAIN
+        sync: false
+      - key: SHOPIFY_ACCESS_TOKEN
+        sync: false
+      - key: SHOPIFY_WEBHOOK_SECRET
+        sync: false
+      - key: SHIPPING_SHIPPO_API_TOKEN
+        sync: false
+      - key: SHIPPING_SHIPPO_TEST_API_TOKEN
+        sync: false
+      - key: WAREHOUSE_CA_ADDRESS1
+        sync: false
+      - key: WAREHOUSE_CA_CITY
+        value: Los Angeles
+      - key: WAREHOUSE_CA_STATE
+        value: CA
+      - key: WAREHOUSE_CA_ZIP
+        sync: false

@@ -15,9 +15,8 @@
 - **Update TASKS.md** when starting work on a task (mark as 🟡 In Progress) and when completing a task (mark as ✅ Complete with date)
 - **NEVER start work on a task without updating TASKS.md**
 - **Never make assumptions about what I think** - Just ask me when you're not sure - we are partners!
-- **Follow project-specific CLAUDE.md** for detailed organization rules
 - **Practice OCD directory organization**
-- **ALWAYS work from the project root directory**
+- **ALWAYS work from the project root directory:** /Users/joshcoleman/repos/ecom-operations
 - **NEVER create tests or scripts in the root directory** use a subdirectory within `tests/` or `scripts/` as appropriate
 - **NEVER keep multiple versions of the same file** - If you create a new version of a file, date stamp the old one and archive it
 - **Always use CLAUDE.md** for project-specific guidelines

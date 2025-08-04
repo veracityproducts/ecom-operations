@@ -1,0 +1,40 @@
+{
+  "order_id": 1753978763861,
+  "order_number": 1763,
+  "tracking_number": "",
+  "label_url": "",
+  "rate": {
+    "object_id": "14b318eecc464eeca0e52d1401791d69",
+    "object_created": "2025-07-31T16:19:24.515Z",
+    "object_owner": "jenna@gracefulbydesign.com",
+    "shipment": "cd2e45143802477cb4c79ca72d76f5e8",
+    "amount": "6.45",
+    "currency": "USD",
+    "amount_local": "6.45",
+    "currency_local": "USD",
+    "attributes": [
+      "CHEAPEST",
+      "BESTVALUE"
+    ],
+    "provider": "USPS",
+    "provider_image_75": "https://shippo-static.s3.amazonaws.com/providers/75/USPS.png",
+    "provider_image_200": "https://shippo-static.s3.amazonaws.com/providers/200/USPS.png",
+    "arrives_by": null,
+    "duration_terms": "Delivery in 2 to 5 days.",
+    "messages": [],
+    "carrier_account": "f4a6550f43e3418280994dfa34f2bf72",
+    "zone": "4",
+    "test": true,
+    "servicelevel": {
+      "name": "Ground Advantage",
+      "token": "usps_ground_advantage",
+      "terms": "",
+      "extended_token": "usps_ground_advantage",
+      "display_name": null,
+      "parent_servicelevel": null
+    },
+    "estimated_days": 2,
+    "included_insurance_price": null
+  },
+  "created_at": "2025-07-31T16:19:25.858204"
+}
